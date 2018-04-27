@@ -31,10 +31,9 @@ function display(resultArray){
     if(resultArray[i].webAddress === undefined){
       $(".output").append(`No website on file. <br>`)
     } else{
-      $(".output").append(`${resultArray[i].webAddress} <br>`);
+      $(".output").append(`<a href="${resultArray[i].webAddress}">Website</a> <br>`);
     }
     $(".output").append(`</div>`)
-    console.log(resultArray[i]);
   }
 }
 

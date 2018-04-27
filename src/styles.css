@@ -1,11 +1,11 @@
-button {
-  margin-top: 20px;
-}
 body{
   background: url("/img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   font-family: helvetica;
+}
+button {
+  margin-top: 20px;
 }
 h1{
   font-size: 100px;
@@ -16,15 +16,17 @@ h1{
   margin-left: 10%;
 }
 label{
-  font-size: 20px;
+  font-size: 24px;
   margin-top: 20px;
 }
 p{
   font-weight: bold;
-  height: 600px;
+  background-color: white;
+  padding-left: 20%;
 }
 .result{
-  margin: 16px;
+  margin: 20px;
   font-weight: bold;
+
 
 }
