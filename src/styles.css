@@ -1,7 +1,27 @@
+button {
+  margin-top: 10px;
+}
+body{
+  background: url("/img/background.jpg");
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1{
+  color: white;
+  font-size: 100px;
+  text-align: center;
+}
+label{
+  font-size: 20px;
+  color: white;
+}
 p{
+  color: white;
+  font-weight: bold;
   height: 600px;
 }
-
 .result{
   margin: 16px;
+  color: white;
 }
