@@ -8,8 +8,8 @@
 
 | Specification | Input | Output |
 | --- | --- | --- |
-| A given city should return results for that city | Portland | Dr. Bob Ross, 124 Main St. Portland, OR, 97214 www.drross.com, Accepting new patients: No...and many more doctors in Portland in this format |
-|A given ailment should return doctors who can treat said ailment  | Portland, Migraine | Dr. Michael Smith, 123 Main St. Portland, OR, 97214 www.drsmith.com, Accepting new patients: No....and many more migraine specialists in this format|
+| A given name should return exact or inclusive results for that name in Portland,OR. | Bob | Dr. Bob Ross, 124 Main St. Portland, OR 5033459999 www.drross.com, Accepting new patients: No...and many more doctors in Portland whose name contains Bob in this format |
+|A given ailment should return doctors who can treat said ailment  |  Migraine | Dr. Michael Smith, 123 Main St. Portland, OR, 5038763333 www.drsmith.com, Accepting new patients: No....and many more migraine specialists in this format|
 | Program should notif if a search returns zero results | Portland, Broken fingernails | Your search returned 0 doctors |
 | Program should notify user of API failure | --- | Error Message 403 |
 
