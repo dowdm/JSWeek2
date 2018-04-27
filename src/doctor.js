@@ -1,12 +1,13 @@
 class Doctor {
-  constructor(firstName, lastName, street, city, phoneNumber, webAddress, newPatients){
+  constructor(firstName, lastName, street, city, state, phoneNumber, newPatients, webAddress){
     this.firstName = firstName;
     this.lastName = lastName;
     this.street = street;
     this.city = city;
-    this.state = "OR";
+    this.state = state;
     this.phoneNumber = phoneNumber;
-    this.webAddress = webAddress;
     this.newPatients = newPatients;
+    this.webAddress = webAddress;
   }
 }
+export {Doctor};
