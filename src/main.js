@@ -16,7 +16,7 @@ function itemize(data){
 
 function display(resultArray){
   for (var i = 0; i < resultArray.length; i++) {
-    $(".output").append(`<div class="col-md-4 result">`)
+    $(".output").append(`<div class="result">`)
     $(".output").append(`${resultArray[i].firstName} `);
     $(".output").append(`${resultArray[i].lastName} <br>`);
     $(".output").append(`${resultArray[i].street} <br>`);
