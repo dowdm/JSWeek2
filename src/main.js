@@ -5,13 +5,16 @@ import './styles.css';
 import $ from 'jquery';
 
 $(document).ready(function() {
-  $("#doctorFinder").submit(function(event){
+  $(".doctorFinder").submit(function(event){
     event.preventDefault();
+    let ailment = $("#ailment").val();
+    console.log(ailment);
     let api = new Api();
-    let promise = api.makeCall();
+    let promise = api.makeCall(ailment);
     promise.then(function(response) {
       let body = JSON.parse(response);
       $("#output").append(body);
+      console.log(body);
 
     },
      function(error) {
