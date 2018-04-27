@@ -16,6 +16,7 @@ function itemize(data){
 
 function display(resultArray){
   for (var i = 0; i < resultArray.length; i++) {
+    $(".output").append(`<div class="col-md-4 result">`)
     $(".output").append(`${resultArray[i].firstName} `);
     $(".output").append(`${resultArray[i].lastName} <br>`);
     $(".output").append(`${resultArray[i].street} <br>`);
@@ -30,8 +31,9 @@ function display(resultArray){
     if(resultArray[i].webAddress === undefined){
       $(".output").append(`No website on file. <br>`)
     } else{
-      $(".output").append(`${resultArray[i].webAddress} <br> `);
+      $(".output").append(`${resultArray[i].webAddress} <br>`);
     }
+    $(".output").append(`</div>`)
     console.log(resultArray[i]);
   }
 }
@@ -39,9 +41,11 @@ function display(resultArray){
 $(document).ready(function() {
   $(".doctorFinder").submit(function(event){
     event.preventDefault();
+    $(".output").text("");
     let ailment = $("#ailment").val();
+    let docName = $("#docName").val();
     let api = new Api();
-    let promise = api.makeCall(ailment);
+    let promise = api.makeCall(ailment, docName);
     promise.then(function(response) {
       let body = JSON.parse(response);
       console.log(body);
