@@ -7,6 +7,9 @@ body{
 button {
   margin-top: 20px;
 }
+#entire{
+  font-size: 16px;
+}
 h1{
   font-size: 100px;
   text-align: left;
@@ -27,6 +30,4 @@ p{
 .result{
   margin: 20px;
   font-weight: bold;
-
-
 }

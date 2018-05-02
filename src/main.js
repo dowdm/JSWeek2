@@ -60,6 +60,7 @@ $(document).ready(function() {
     .then(function(response) {
       let body = JSON.parse(response);
       if (body.data.length === 0){
+        $(".output").text("");
         $(".output").append(`No results match your query. Try a different term.`)
       } else {
       display(itemize(body.data));
