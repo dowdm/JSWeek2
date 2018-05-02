@@ -1,5 +1,6 @@
 import { Api } from './api';
 import { Doctor } from './doctor';
+import {GeocodeApi} from './geocode-api';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -43,11 +44,21 @@ $(document).ready(function() {
     $(".output").text("");
     let ailment = $("#ailment").val();
     let docName = $("#docName").val();
-    let api = new Api();
-    let promise = api.makeCall(ailment, docName);
-    promise.then(function(response) {
+    let street = $("#street").val().replace(" ","+");
+    let city = $("#city").val().replace(" ","+");
+    let state = $("#state").val().replace(" ","+");
+    let geoApi = new GeocodeApi();
+    let geoPromise = geoApi.makeCall(street, city, state);
+    geoPromise.then(function(response){
       let body = JSON.parse(response);
-      console.log(body);
+
+      let lat = body.results[0].geometry.location.lat;
+      let lon = body.results[0].geometry.location.lng;
+      let api = new Api();
+      return  api.makeCall(ailment, docName, lat, lon);
+    })
+    .then(function(response) {
+      let body = JSON.parse(response);
       if (body.data.length === 0){
         $(".output").append(`No results match your query. Try a different term.`)
       } else {

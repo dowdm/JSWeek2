@@ -1,8 +1,8 @@
-class Api {
-  makeCall(ailment, docName, lat, lon){
+class GeocodeApi {
+  makeCall(street,city, state){
     let promise = new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${docName}&query=${ailment}&location=${lat},${lon},20&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
+      let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${street},+${city},+${state}&key=${process.env.API_KEY}`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
@@ -16,4 +16,4 @@ class Api {
     return promise;
   }
 }
-export { Api };
+export { GeocodeApi };
